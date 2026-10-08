@@ -1,5 +1,7 @@
 # opencode — my engineering flow
 
+[![skills.sh](https://skills.sh/b/AndrewGanzha/basic-skills)](https://skills.sh/AndrewGanzha/basic-skills)
+
 A project-scoped [opencode](https://opencode.ai) config for a spec-driven,
 test-first workflow. Five commands, hard-coded file architecture, no setup
 interview.
@@ -29,7 +31,7 @@ Two layers, two mechanisms.
 Clone the repo and copy the pieces into your project root, then restart opencode.
 
 ```bash
-git clone <this-repo> /tmp/flow
+git clone https://github.com/AndrewGanzha/basic-skills /tmp/flow
 cp -R /tmp/flow/.opencode /tmp/flow/skills /tmp/flow/AGENTS.md /tmp/flow/opencode.json /path/to/your-project/
 ```
 
@@ -50,7 +52,7 @@ The skills follow the [Agent Skills spec](https://agentskills.io), so the
 `.agents/skills/`, global `~/.config/opencode/skills/`):
 
 ```bash
-npx skills add <owner>/<repo> -a opencode
+npx skills add AndrewGanzha/basic-skills -a opencode
 ```
 
 This installs `SKILL.md` files only — it does **not** install the commands or
