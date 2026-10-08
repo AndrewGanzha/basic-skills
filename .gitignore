@@ -1,0 +1,5 @@
+# Local feature workspace created by the workflow (specs, tickets)
+.scratch/
+
+# OS noise
+.DS_Store
