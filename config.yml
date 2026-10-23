@@ -1,0 +1,154 @@
+modelRoles:
+  web: opencode-go/gpt-6-luna
+  default: opencode-go/deepseek-v4.1-flash:high
+  vision: opencode-go/mimo-v2.6-pro:high
+  plan: opencode-go/mimo-v2.6-pro:high
+  slow: opencode-go/glm-5.3:max
+  commit: opencode-go/mimo-v2.6-flash:low
+  speech: local/kokoro
+  advisor: opencode-go/mimo-v2.6-pro:high
+  RU-DOCS: opencode-go/deepseek-v4.1-flash:high
+  task: opencode-go/deepseek-v4.1-flash:high
+  review: opencode-go/mimo-v2.6-pro:high
+  judge: opencode-go/mimo-v2.6-flash
+  dictation: local/parakeet-tdt-0.6b-v3
+  memory: opencode-go/deepseek-v4.1-flash:high
+  tiny: opencode-go/mimo-v2.6-flash:low
+  smol: opencode-go/mimo-v2.6-flash:low
+enabledModels:
+  - "@default"
+  - opencode-go/*
+symbolPreset: unicode
+composer:
+  shape: band
+theme:
+  dark: titanium
+setupVersion: 2
+temperature: 0.5
+statusLine:
+  preset: full
+  separator: pipe
+  contextLine: embedded
+memory:
+  backend: local
+autolearn:
+  enabled: true
+bash:
+  allowCompoundCommands: true
+dev:
+  autoqaConsent: granted
+astGrep:
+  enabled: true
+github:
+  enabled: true
+generate_image:
+  enabled: false
+plan:
+  autosave: true
+tui:
+  vimMode: false
+tools:
+  approvalMode: yolo
+lsp:
+  formatOnWrite: false
+modelPresets:
+  default:
+    modelRoles:
+      web: opencode-go/gpt-6-luna
+      default: opencode-go/deepseek-v4.1-flash:high
+      vision: opencode-go/mimo-v2.6-pro:high
+      plan: opencode-go/mimo-v2.6-pro:high
+      slow: opencode-go/glm-5.3:max
+      commit: opencode-go/mimo-v2.6-flash:low
+      speech: local/kokoro
+      advisor: opencode-go/mimo-v2.6-pro:high
+      RU-DOCS: opencode-go/deepseek-v4.1-flash:high
+      task: opencode-go/deepseek-v4.1-flash:high
+      review: opencode-go/mimo-v2.6-pro:high
+      judge: opencode-go/mimo-v2.6-flash
+      dictation: local/parakeet-tdt-0.6b-v3
+      memory: opencode-go/deepseek-v4.1-flash:high
+      tiny: opencode-go/mimo-v2.6-flash:low
+      smol: opencode-go/mimo-v2.6-flash:low
+    defaultThinkingLevel: auto
+tier:
+  openai: priority
+advisor:
+  enabled: true
+  syncBacklog: "1"
+  reviewMode: agent-end
+prewalk:
+  enabled: false
+images:
+  urls:
+    enabled: true
+    backends:
+      - provider-files
+      - tailscale
+      - cloudflared
+      - litterbox
+inlineToolDescriptors: auto
+defaultThinkingLevel: auto
+telemetry:
+  otlpExportEnabled: false
+retry:
+  fallbackChains:
+    default:
+      - opencode-go/mimo-v2.6-pro:high
+      - opencode-go/glm-5.3-flash:high
+    smol:
+      - opencode-go/deepseek-v4.1-flash:low
+      - opencode-go/glm-5.3-flash:low
+    commit:
+      - opencode-go/deepseek-v4.1-flash:low
+      - opencode-go/glm-5.3-flash:low
+    tiny:
+      - opencode-go/deepseek-v4.1-flash:low
+      - opencode-go/glm-5.3-flash:low
+    slow:
+      - opencode-go/mimo-v2.6-pro:high
+      - opencode-go/deepseek-v4.1-flash:max
+    plan:
+      - opencode-go/deepseek-v4.1-flash:max
+      - opencode-go/glm-5.3-flash:high
+    review:
+      - opencode-go/glm-5.3-flash:high
+      - opencode-go/deepseek-v4.1-flash:high
+    advisor:
+      - opencode-go/glm-5.3-flash:high
+      - opencode-go/deepseek-v4.1-flash:high
+    vision:
+      - opencode-go/deepseek-v4.1-flash:high
+      - opencode-go/kimi-k3:max
+    judge:
+      - opencode-go/deepseek-v4.1-flash:low
+    web: []
+    image: []
+    speech: []
+    dictation: []
+    memory:
+      - opencode-go/mimo-v2.6-pro:high
+      - opencode-go/glm-5.3-flash:high
+    task:
+      - opencode-go/mimo-v2.6-pro:high
+      - opencode-go/glm-5.3-flash:high
+    RU-DOCS:
+      - opencode-go/mimo-v2.6-pro:high
+      - opencode-go/glm-5.3-flash:high
+    widget:
+      - opencode-go/deepseek-v4.1-flash:low
+      - opencode-go/glm-5.3-flash:low
+edit:
+  modelVariants:
+    aliceai-llm: replace
+codexResets:
+  autoRedeem: "yes"
+task:
+  agentModelOverrides:
+    task: "@task"
+    scout: "@smol"
+    sonic: "@smol"
+    reviewer: "@review"
+    security-reviewer: "@review"
+  enableEffort: true
+  showResolvedModelBadge: true
